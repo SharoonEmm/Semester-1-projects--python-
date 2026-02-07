@@ -1,2 +1,2 @@
 #Portfolio Projects
-Porjects i am working on,
+Projects I am working on.
