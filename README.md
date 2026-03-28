@@ -1,7 +1,9 @@
 📌 Overview
-
 Auto Network Tester is a command-line Python application designed to simulate basic network diagnostics. It allows users to test connectivity to predefined and custom domains using automated ping requests, providing quick feedback on network reachability.
 This project was built to reinforce core concepts in Python programming and networking fundamentals, while developing a structured and scalable application.
+
+📸 Screenshot
+[Network Tester Screenshot](screenshot.png)
 
 🚀 Features
 Test connectivity of preloaded domains
