@@ -64,27 +64,26 @@ def show_domains():
         print(f"{index}: {domains[index]}")
 
 
-# Function to automatically test a domain using ping
+# Function to automatically test if a domain is reachable
 def auto_test_domain(domain):
-    # Run one ping request to the selected domain
-    response = os.system(f"ping -n 1 {domain}")
+    if os.name == "nt":  # Windows
+        response = os.system(f"ping -n 1 {domain}")
+    else:  # Mac/Linux
+        response = os.system(f"ping -c 1 {domain}")
 
-    # If response is 0, the domain is reachable
     if response == 0:
         return "Reachable"
     else:
-        return "Not Reachable"
+        return "Unreachable"
 
 
-# Function to test a domain from the preloaded list
+# Function to test one of the preloaded domains
 def test_preloaded_domain():
     show_domains()
 
     try:
-        # Ask user to select a domain by index
-        select_domain = int(input("\nType the index of the domain: "))
+        select_domain = int(input("\nEnter the index of the domain to test: "))
 
-        # Check if the selected index is valid
         if select_domain < 0 or select_domain >= len(domains):
             print("Invalid index.")
             return
